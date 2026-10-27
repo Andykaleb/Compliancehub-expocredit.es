@@ -1,0 +1,109 @@
+/* =====================================================================
+   ExpoCredit Knowledge Center — capa visual (solo presentación)
+   No contiene contenido: únicamente estilos que refinan style.css.
+   ===================================================================== */
+:root{--cyan2:#12b1c6;--ink:#0b2a55}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+::selection{background:#bfe6f2;color:#082e64}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--cyan2);outline-offset:2px}
+
+/* ---------- Menú lateral: misma gama azul + textura corporativa ---------- */
+.sidebar{
+  background:
+    radial-gradient(130% 50% at 0% 0%,rgba(34,150,205,.34) 0%,rgba(34,150,205,0) 62%),
+    radial-gradient(120% 45% at 100% 100%,rgba(18,177,198,.24) 0%,rgba(18,177,198,0) 64%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440' fill='none' stroke='white' stroke-opacity='.07'%3E%3Ccircle cx='440' cy='440' r='110'/%3E%3Ccircle cx='440' cy='440' r='180'/%3E%3Ccircle cx='440' cy='440' r='250'/%3E%3Ccircle cx='440' cy='440' r='320'/%3E%3Ccircle cx='440' cy='440' r='390'/%3E%3C/svg%3E") right bottom/440px 440px no-repeat,
+    repeating-linear-gradient(135deg,rgba(255,255,255,.032) 0 1px,transparent 1px 13px),
+    linear-gradient(180deg,#092e62,#0c477f);
+  box-shadow:inset -1px 0 0 rgba(255,255,255,.08),10px 0 34px rgba(8,30,70,.14);
+}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22)}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+
+/* Marca: logo oficial blanco sobre el azul, sin tarjeta blanca */
+.brand{background:transparent;box-shadow:none;border-radius:0;padding:4px 2px 0;margin:0 0 20px}
+.brand img{display:block;width:100%;max-width:246px;height:auto;max-height:none;margin:-14px auto -12px}
+.brand-line{height:1px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(167,216,247,.55),rgba(255,255,255,0));margin:8px 4px 10px}
+.brand-product{color:#a7d8f7;letter-spacing:.3em;font-size:10px}
+
+/* Navegación */
+.nav{gap:4px}
+.nav-item{transition:background .2s,color .2s,transform .2s}
+.nav-item:hover{transform:translateX(2px)}
+.nav-item.active{background:linear-gradient(90deg,rgba(18,177,198,.24),rgba(255,255,255,.09));box-shadow:inset 3px 0 0 var(--cyan2)}
+.nav-child{transition:background .2s,color .2s}
+.nav-child.active{background:linear-gradient(90deg,rgba(18,177,198,.22),rgba(255,255,255,.08))}
+.mini-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;box-shadow:0 8px 24px rgba(4,20,48,.18)}
+
+/* ---------- Barra superior y fondo general ---------- */
+body{background:radial-gradient(900px 420px at 85% -80px,rgba(22,143,190,.08),transparent 70%),var(--bg)}
+.topbar{box-shadow:0 6px 24px rgba(11,50,103,.05)}
+.search-wrap input{transition:border-color .2s,box-shadow .2s,background .2s}
+.search-wrap input:focus{background:#fff}
+.ghost-btn{transition:background .2s,border-color .2s,transform .2s}
+.ghost-btn:hover{border-color:#9cc6e8;background:#f4f9fe;transform:translateY(-1px)}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(125deg,#07295a 0%,#0f4a86 56%,#0ca1bd 135%);box-shadow:0 24px 60px rgba(8,41,90,.22)}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 1px,transparent 1px 14px)}
+.hero:after{background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,.03) 70%)}
+.hero-copy{position:relative;z-index:1}
+.hero h1{letter-spacing:-.04em}
+.hero-panel{backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 40px rgba(4,20,48,.18)}
+.hero-search button,.primary-btn{transition:transform .2s,box-shadow .2s}
+.hero-search button:hover,.primary-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(4,20,48,.22)}
+.quick-tags button{transition:background .2s,transform .2s}
+.quick-tags button:hover{transform:translateY(-1px)}
+
+/* ---------- Jerarquía de títulos ---------- */
+.page-title h1,.section-head h2{color:var(--ink);letter-spacing:-.025em}
+.page-title .eyebrow,.section-head .eyebrow{display:flex;align-items:center;gap:9px;color:#3f8cc4}
+.page-title .eyebrow:before,.section-head .eyebrow:before{content:"";width:22px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan2),#168fbe)}
+
+/* ---------- Tarjetas y paneles ---------- */
+.module-card,.panel,.country-card,.info-card,.accordion,.tip,.error-box,.search-hit{transition:transform .22s,box-shadow .22s,border-color .22s}
+.module-card{background:linear-gradient(180deg,#fff,#fbfdff);position:relative;overflow:hidden}
+.module-card:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,#0b3267,#168fbe,#12b1c6);opacity:0;transition:opacity .22s}
+.module-card:hover:before{opacity:1}
+.icon-box{background:linear-gradient(135deg,#eaf6fb,#d9eaf7);box-shadow:inset 0 0 0 1px rgba(22,143,190,.12)}
+.open-btn,.link-btn{transition:color .2s,transform .2s}
+.open-btn:hover{color:#0b3267;transform:translateX(3px)}
+.country-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#b8d1ec}
+.country-flag{filter:drop-shadow(0 2px 4px rgba(11,50,103,.18))}
+.accordion:hover{border-color:#c4d9ef}
+.acc-head{transition:background .2s}
+.acc-head:hover{background:#f6fafe}
+.search-hit:hover{border-color:#b8d1ec;box-shadow:0 10px 28px rgba(18,54,96,.08)}
+.tab{transition:background .2s,color .2s,border-color .2s,transform .2s}
+.tab:not(.active):hover{border-color:#9cc6e8;color:var(--navy);transform:translateY(-1px)}
+.tab.active{box-shadow:0 8px 18px rgba(11,50,103,.22)}
+
+/* ---------- Checklist: acabado ---------- */
+.check-row,.block-check-row{transition:background .2s}
+.check-row:hover,.block-check-row:hover{background:#f6fafe}
+.country-summary{box-shadow:0 10px 28px rgba(18,54,96,.07)}
+.big-progress{box-shadow:0 14px 38px rgba(18,54,96,.08)}
+.progress-bar{transition:width .45s cubic-bezier(.2,.8,.2,1)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- Menú compacto (para que todo el menú quepa sin scroll) ---------- */
+.sidebar{padding:14px 14px 12px}
+.brand{margin:0 0 10px}
+.brand img{max-width:200px;margin:-10px auto -9px}
+.brand-line{margin:6px 4px 7px}
+.brand-product{font-size:9px}
+.nav{gap:1px}
+.nav-item{padding:8px 11px;gap:9px;font-size:12.5px;border-radius:10px}
+.nav-item span{width:20px;font-size:15px}
+.nav-parent{padding:8px 11px}
+.nav-parent-text b{font-size:10.5px}
+.nav-parent-text small{font-size:8.5px}
+.nav-children{padding:1px 0 3px 12px;margin-left:20px;gap:0}
+.nav-children.open{gap:0}
+.nav-child{padding:5px 7px;font-size:10px;line-height:1.2;gap:7px;border-radius:8px}
+.nav-child span{min-width:16px}
+.sidebar-footer{padding-top:8px}
+.mini-card{padding:9px 12px;border-radius:12px}
+.mini-card b{font-size:11px}
+.mini-card span{font-size:10px;line-height:1.35}
